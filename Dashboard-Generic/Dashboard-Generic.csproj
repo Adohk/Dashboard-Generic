@@ -3577,6 +3577,7 @@
     <Content Include="fonts\material-icons.woff2" />
     <Content Include="fonts\latin-ext.woff2" />
     <Content Include="fonts\latin.woff2" />
+    <Content Include="App_Data\Base" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -3717,7 +3718,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
