@@ -89,8 +89,6 @@ namespace Dashboard.Controllers {
             Session.Clear();
             Session.Abandon();
             return View("Login");
-            //return RedirectToRoute("/");
-            //return View("Index");
         }
 
         public ActionResult NotFound(string aspxerrorpath) {
@@ -113,11 +111,5 @@ namespace Dashboard.Controllers {
             return View("500");
         }
 
-        //public ActionResult NotFound(string aspxerrorpath) {
-        //    if (!string.IsNullOrWhiteSpace(aspxerrorpath))
-        //        return RedirectToAction("NotFound");
-
-        //    return View();
-        //}
     }
 }
