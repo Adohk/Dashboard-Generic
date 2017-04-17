@@ -1,0 +1,39 @@
+﻿@{
+    string CurrentURL = Request.Url.AbsolutePath;
+}
+<div class="menu">
+    <ul class="list">
+        <li class="header">MENU</li>
+        @if (CurrentURL == "/") {
+            <li class="active">
+                <a href="@Url.Action("Index","Home")">
+                    <i class="material-icons">home</i>
+                    <span>Home</span>
+                </a>
+            </li>
+        } else {
+            <li>
+                <a href="@Url.Action("Index","Home")">
+                    <i class="material-icons">home</i>
+                    <span>Home</span>
+                </a>
+            </li>
+        }
+        @if (CurrentURL.Contains("BlankPage")) {
+            <li class="active">
+                <a href="@Url.Action("BlankPage","Home")">
+                    <i class="material-icons">content_copy</i>
+                    <span>Blank Page</span>
+                </a>
+            </li>
+        } else {
+            <li>
+                <a href="@Url.Action("BlankPage","Home")">
+                    <i class="material-icons">content_copy</i>
+                    <span>Blank Page</span>
+                </a>
+            </li>
+        }
+        <li class="header">Options</li>
+    </ul>
+</div>

@@ -1,0 +1,107 @@
+﻿
+<!-- Right Sidebar -->
+<aside id="rightsidebar" class="right-sidebar">
+    <ul class="nav nav-tabs tab-nav-right" role="tablist">
+        <li role="presentation" class="active"><a href="#skins" data-toggle="tab">SKINS</a></li>
+        <li role="presentation"><a href="#settings" data-toggle="tab">SETTINGS</a></li>
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active in active" id="skins">
+            <ul class="demo-choose-skin">
+                @{
+                    List<string> colors = new List<string>();
+                    colors.Add("red");
+                    colors.Add("pink");
+                    colors.Add("purple");
+                    colors.Add("deep-purple");
+                    colors.Add("indigo");
+                    colors.Add("blue");
+                    colors.Add("light-blue");
+                    colors.Add("cyan");
+                    colors.Add("teal");
+                    colors.Add("green");
+                    colors.Add("light-green");
+                    colors.Add("lime");
+                    colors.Add("yellow");
+                    colors.Add("amber");
+                    colors.Add("orange");
+                    colors.Add("deep-orange");
+                    colors.Add("brown");
+                    colors.Add("grey");
+                    colors.Add("blue-grey");
+                    colors.Add("black");
+                    string accolor;
+                    if (Request.Cookies["Theme"] == null) {
+                        accolor = "red";
+                    } else {
+                        accolor = Request.Cookies["Theme"].Value;
+                    }
+                }
+                @foreach (var c in colors) {
+                    if (accolor.Equals(c)) {
+                        <li data-theme="@c" class="active">
+                            <div class="@c"></div>
+                            <span>@c</span>
+                        </li>
+                    } else {
+                        <li data-theme="@c">
+                            <div class="@c"></div>
+                            <span>@c</span>
+                        </li>
+                    }
+                }
+
+            </ul>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="settings">
+            <div class="demo-settings">
+                <p>GENERAL SETTINGS</p>
+                <ul class="setting-list">
+                    <li>
+                        <span>Report Panel Usage</span>
+                        <div class="switch">
+                            <label><input type="checkbox" checked><span class="lever"></span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <span>Email Redirect</span>
+                        <div class="switch">
+                            <label><input type="checkbox"><span class="lever"></span></label>
+                        </div>
+                    </li>
+                </ul>
+                <p>SYSTEM SETTINGS</p>
+                <ul class="setting-list">
+                    <li>
+                        <span>Notifications</span>
+                        <div class="switch">
+                            <label><input type="checkbox" checked><span class="lever"></span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <span>Auto Updates</span>
+                        <div class="switch">
+                            <label><input type="checkbox" checked><span class="lever"></span></label>
+                        </div>
+                    </li>
+                </ul>
+                <p>ACCOUNT SETTINGS</p>
+                <ul class="setting-list">
+                    <li>
+                        <span>Off-line</span>
+                        <div class="switch">
+                            <label><input type="checkbox"><span class="lever"></span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <span>Location Permission</span>
+                        <div class="switch">
+                            <label><input type="checkbox" checked><span class="lever"></span></label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</aside>
+<!-- #END# Right Sidebar -->

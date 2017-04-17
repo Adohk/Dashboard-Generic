@@ -1,0 +1,5 @@
+﻿.dataTables_scroll
+{
+    overflow:auto;
+    position:relative;
+}
