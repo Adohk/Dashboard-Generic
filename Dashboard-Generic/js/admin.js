@@ -51,6 +51,7 @@ $.AdminBSB.leftSideBar = {
         var _this = this;
         var $body = $('body');
         var $overlay = $('.overlay');
+        var $content = $('#content');
 
         //Close sidebar
         $(window).click(function (e) {
@@ -58,8 +59,9 @@ $.AdminBSB.leftSideBar = {
             if (e.target.nodeName.toLowerCase() === 'i') { $target = $(e.target).parent(); }
 
             if (!$target.hasClass('bars') && _this.isOpen() && $target.parents('#leftsidebar').length === 0) {
-                if (!$target.hasClass('js-right-sidebar')) $overlay.fadeOut();
-                $body.removeClass('overlay-open');
+               // if (!$target.hasClass('js-right-sidebar')) $overlay.fadeOut();
+                //$body.removeClass('overlay-open');
+                //$content.removeClass('menutoggle');
             }
         });
 
@@ -97,10 +99,10 @@ $.AdminBSB.leftSideBar = {
 
         //Set menu height
         _this.setMenuHeight();
-        _this.checkStatuForResize(true);
+        //_this.checkStatuForResize(true);
         $(window).resize(function () {
             _this.setMenuHeight();
-            _this.checkStatuForResize(false);
+            //_this.checkStatuForResize(false);
         });
 
         //Set Waves
@@ -164,6 +166,7 @@ $.AdminBSB.rightSideBar = {
         var _this = this;
         var $sidebar = $('#rightsidebar');
         var $overlay = $('.overlay');
+        var $content = $('#content');
 
         //Close sidebar
         $(window).click(function (e) {
@@ -173,10 +176,18 @@ $.AdminBSB.rightSideBar = {
             if (!$target.hasClass('js-right-sidebar') && _this.isOpen() && $target.parents('#rightsidebar').length === 0) {
                 if (!$target.hasClass('bars')) $overlay.fadeOut();
                 $sidebar.removeClass('open');
+                //$content.addClass('menutoggle');
             }
         });
 
         $('.js-right-sidebar').on('click', function () {
+
+            if ($content.hasClass('menutoggle')) {
+                $content.addClass('menutoggle');
+            } else {
+                //$content.addClass('menutoggle');
+            }
+
             $sidebar.toggleClass('open');
             if (_this.isOpen()) { $overlay.fadeIn(); } else { $overlay.fadeOut(); }
         });
@@ -232,11 +243,26 @@ $.AdminBSB.navbar = {
     activate: function () {
         var $body = $('body');
         var $overlay = $('.overlay');
+        var $content = $('#content');
 
         //Open left sidebar panel
         $('.bars').on('click', function () {
+
+            if ($content.hasClass('menutoggle') && $('#rightsidebar').hasClass('open')) {
+                $content.removeClass('menutoggle');
+                $overlay.fadeOut();
+            } else if ($content.hasClass('menutoggle') && !$('#rightsidebar').hasClass('open')) {
+                $content.removeClass('menutoggle');
+                $overlay.fadeOut();
+            } else {
+                $content.addClass('menutoggle');
+            }
+
+
             $body.toggleClass('overlay-open');
-            if ($body.hasClass('overlay-open')) { $overlay.fadeIn(); } else { $overlay.fadeOut(); }
+            if ($body.hasClass('overlay-open')) {
+                //$overlay.fadeIn();
+            } else { $overlay.fadeOut(); }
         });
 
         //Close collapse bar on click event

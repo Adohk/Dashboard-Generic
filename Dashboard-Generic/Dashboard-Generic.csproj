@@ -263,6 +263,7 @@
     </Content>
     <Content Include="js\demo.js" />
     <Content Include="js\helpers.js" />
+    <Content Include="js\lunr.min.js" />
     <Content Include="js\pages\cards\basic.js" />
     <Content Include="js\pages\cards\colored.js" />
     <Content Include="js\pages\charts\chartjs.js" />
@@ -297,6 +298,7 @@
     <Content Include="js\pages\widgets\infobox\infobox-4.js" />
     <Content Include="js\pages\widgets\infobox\infobox-5.js" />
     <Content Include="js\script.js" />
+    <Content Include="js\search.js" />
     <Content Include="plugins\animate-css\animate.css" />
     <Content Include="plugins\animate-css\animate.min.css" />
     <Content Include="plugins\autosize\autosize.js" />
