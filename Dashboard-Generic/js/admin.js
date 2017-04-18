@@ -244,18 +244,33 @@ $.AdminBSB.navbar = {
         var $body = $('body');
         var $overlay = $('.overlay');
         var $content = $('#content');
+        if ($body.width() <= 768) {
+            $content.addClass('menutoggle');
+            $body.removeClass('overlay-open');
+        }
 
         //Open left sidebar panel
         $('.bars').on('click', function () {
-
-            if ($content.hasClass('menutoggle') && $('#rightsidebar').hasClass('open')) {
-                $content.removeClass('menutoggle');
-                $overlay.fadeOut();
-            } else if ($content.hasClass('menutoggle') && !$('#rightsidebar').hasClass('open')) {
-                $content.removeClass('menutoggle');
-                $overlay.fadeOut();
+            if ($body.width() <= 768) {
+                if ($content.hasClass('menutoggle') && $('#rightsidebar').hasClass('open')) {
+                    $content.addClass('menutoggle');
+                    $overlay.fadeOut();
+                } else if ($content.hasClass('menutoggle') && !$('#rightsidebar').hasClass('open')) {
+                    $content.addClass('menutoggle');
+                    $overlay.fadeOut();
+                } else {
+                    $content.addClass('menutoggle');
+                }
             } else {
-                $content.addClass('menutoggle');
+                if ($content.hasClass('menutoggle') && $('#rightsidebar').hasClass('open')) {
+                    $content.removeClass('menutoggle');
+                    $overlay.fadeOut();
+                } else if ($content.hasClass('menutoggle') && !$('#rightsidebar').hasClass('open')) {
+                    $content.removeClass('menutoggle');
+                    $overlay.fadeOut();
+                } else {
+                    $content.addClass('menutoggle');
+                }
             }
 
 

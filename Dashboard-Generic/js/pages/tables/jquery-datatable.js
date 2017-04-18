@@ -18,7 +18,7 @@ $(function () {
         ]
     });
 
-    //jQuery('.js-exportable').wrap('<div class="dataTables_scroll" />');
+    $('.js-exportable').wrap('<div class="dataTables_scroll" />');
 
 });
 
