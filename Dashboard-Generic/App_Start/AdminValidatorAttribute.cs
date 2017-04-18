@@ -10,7 +10,7 @@ namespace Dashboard.App_Start {
             HttpContext ctx = HttpContext.Current;
             // check  sessions here
             if (HttpContext.Current.Session["UserRole"].ToString() != "Admin") {
-                filterContext.Result = new RedirectResult("/Home/UnAutorized");
+                filterContext.Result = new RedirectResult("Error/UnAuthorized");
                 return;
             }
             base.OnActionExecuting(filterContext);

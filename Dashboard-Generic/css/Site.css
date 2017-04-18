@@ -11,3 +11,13 @@
 .menutoggle{
   margin-left: 15px !important;
 }
+
+.four-zero-one .four-zero-one-container .error-code {
+    font-size: 160px;
+}
+
+.four-zero-one {
+    width: 100%;
+    text-align: center;
+    margin: 5% auto;
+}
