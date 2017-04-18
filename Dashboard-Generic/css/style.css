@@ -42,7 +42,7 @@
   margin-left: -300px; }
 
 .ls-closed section.content {
-  margin-left: 15px; }
+  /*margin-left: 15px;*/ }
 
 .ls-closed .bars:after, .ls-closed .bars:before {
   font-family: 'Material Icons';
@@ -6667,7 +6667,7 @@ fieldset[disabled] .form-control {
   margin-left: -300px; }
 
 .ls-closed section.content {
-  margin-left: 15px; }
+  /*margin-left: 15px;*/ }
 
 .ls-closed .bars:after, .ls-closed .bars:before {
   font-family: 'Material Icons';

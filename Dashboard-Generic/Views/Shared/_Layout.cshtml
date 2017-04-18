@@ -14,7 +14,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="~/favicon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <title>Hello</title>
@@ -41,7 +41,7 @@
     color = Request.Cookies["Theme"].Value;
 }
 
-<body class="theme-@color">
+<body class="theme-@color ls-closed overlay-open">
     <!-- #region Page Loader -->
     <div class="page-loader-wrapper">
         <div class="loader">
@@ -63,15 +63,16 @@
     <div class="overlay"></div>
     <!-- #endregion -->
     <!-- #region Search Bar  -->
-    <div class="search-bar">
+    @*<div class="search-bar">
         <div class="search-icon">
             <i class="material-icons">search</i>
         </div>
-        <input type="text" placeholder="START TYPING...">
+        <input type="text" id="search" placeholder="START TYPING...">
         <div class="close-search">
             <i class="material-icons">close</i>
         </div>
-    </div>
+        <div class="search-results"></div>
+    </div>*@
     <!-- #endregion -->
 
     @Html.Partial("_NavBar")
@@ -80,7 +81,7 @@
         @Html.Partial("_RightSideBar")
     </section>
 
-    <section class="content">
+    <section id="content" class="content ">
         <div class="container-fluid">
             <div class="block-header">
                 @RenderBody()
@@ -94,6 +95,8 @@
     <script src="../../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
     <script src="../../plugins/node-waves/waves.js"></script>
 
+    <script src="~/js/lunr.min.js"></script>
+    <script src="~/js/search.js"></script>
     @*<script src="../../plugins/jquery-countto/jquery.countTo.js"></script>*@
     @*<script src="../../plugins/raphael/raphael.min.js"></script>
     <script src="../../plugins/morrisjs/morris.js"></script>
