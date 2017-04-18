@@ -10,7 +10,7 @@ namespace Dashboard.App_Start {
             HttpContext ctx = HttpContext.Current;
             // check  sessions here
             if (HttpContext.Current.Session["UserID"] == null) {
-                filterContext.Result = new RedirectResult("../../");
+                filterContext.Result = new RedirectResult("Account/Login");
                 return;
             }
             base.OnActionExecuting(filterContext);

@@ -135,19 +135,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-chosen.css" />
-    <Content Include="Content\bootstrap-datepicker3.standalone.min.css" />
-    <Content Include="Content\bootstrap-paper.css" />
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\chosen-sprite%402x.png" />
-    <Content Include="Content\chosen-sprite.png" />
-    <Content Include="Content\chosen.css" />
-    <Content Include="Content\chosen.min.css" />
-    <Content Include="Content\PageLayout.css" />
-    <Content Include="Content\site.css" />
     <Content Include="css\materialize.css" />
     <Content Include="css\Site.css" />
     <Content Include="css\style.css" />
@@ -192,7 +179,6 @@
     <Content Include="css\themes\theme-teal.min.css" />
     <Content Include="css\themes\theme-yellow.css" />
     <Content Include="css\themes\theme-yellow.min.css" />
-    <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\icon.css" />
@@ -202,12 +188,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Content\PdfLayout.html" />
-    <Content Include="Content\PDFStyleSheet.css" />
     <Content Include="images\animation-bg.jpg" />
     <Content Include="images\image-gallery\1.jpg" />
     <Content Include="images\image-gallery\10.jpg" />
@@ -255,12 +235,6 @@
     <Content Include="images\user.jpg" />
     <Content Include="images\user.png" />
     <Content Include="js\admin.js" />
-    <Content Include="js\demo.es5.js">
-      <DependentUpon>demo.js</DependentUpon>
-    </Content>
-    <Content Include="js\demo.es5.min.js">
-      <DependentUpon>demo.es5.js</DependentUpon>
-    </Content>
     <Content Include="js\demo.js" />
     <Content Include="js\helpers.js" />
     <Content Include="js\lunr.min.js" />
@@ -3463,10 +3437,6 @@
     <Content Include="plugins\waitme\waitMe.js" />
     <Content Include="plugins\waitme\waitMe.min.css" />
     <Content Include="plugins\waitme\waitMe.min.js" />
-    <Content Include="ProtoDB.sql" />
-    <Content Include="Content\animate.css" />
-    <Content Include="Content\bootstrap-chosen.scss" />
-    <Content Include="Content\bootstrap-chosen.less" />
     <Content Include="plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.css.map" />
     <Content Include="plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.min.css.map" />
     <Content Include="plugins\bootstrap-material-datetimepicker\font\Material-Design-Icons.eot" />
@@ -3579,16 +3549,11 @@
     <Content Include="fonts\material-icons.woff2" />
     <Content Include="fonts\latin-ext.woff2" />
     <Content Include="fonts\latin.woff2" />
-    <Content Include="App_Data\Base" />
-    <None Include="compilerconfig.json" />
-    <None Include="compilerconfig.json.defaults">
-      <DependentUpon>compilerconfig.json</DependentUpon>
-    </None>
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
-    <None Include="Views\Home\401.cshtml" />
-    <None Include="Views\Home\404.cshtml" />
-    <None Include="Views\Home\500.cshtml" />
+    <None Include="Views\Error\401.cshtml" />
+    <None Include="Views\Error\404.cshtml" />
+    <None Include="Views\Error\500.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -3606,14 +3571,9 @@
     <Compile Include="App_Start\HashClass.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\SessionExpireAttribute.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -3708,7 +3668,9 @@
     <Content Include="Views\Shared\_RightSideBar.cshtml" />
     <Content Include="Views\Home\BlankPage.cshtml" />
     <Content Include="Views\Shared\_Menu.cshtml" />
-    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Shared\_ErrorLayout.cshtml" />
+    <Content Include="Views\Shared\_AccountLayout.cshtml" />
     <None Include="Web.CustomProfile.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -3720,6 +3682,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
